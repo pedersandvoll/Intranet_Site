@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hjem</title>
+    <link rel="stylesheet" href="css_intranettside.css">
+</head>
+<header>
+    <div class="navbar">
+        <a href="Startside.html">
+          <div class="logo">
+            <img src="bilder/logo_hvit.png">
+          </div>
+        </a>
+        <a href="#nyheter">Nyheter</a>
+        <input type="text" placeholder="Søk..">
+        <div class="dropdown">
+          <button class="dropbtn">Veiledning
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="GDPR.html">GDPR</a>
+            <a href="HMS.html">HMS</a>
+            <a href="Tiltak.html">Tiltak</a>
+            <a href="Digitale trusler.html">Digitale trusler</a>
+            
+          </div>
+        </div>
+       </div>
+      </div>
+</header>
+<body>
+  <div class="section">
+    <div class="container">
+      <div class="content-section">
+        <div class="title">
+          <h1>Sandnes Aftenblad</h1>
+        </div>
+        <div class="content">
+          <h3>Sandnes</h3>
+          <p>Sandnes Aftenblad er en ny avis som ønsker å vise fram hva vi har i Sandnes. Vi er
+            stolte over det vi har her og ønsker å få vist mer av hva vi har å tilby.
+          </p>
+          <div class="content1">
+            <a href=""><div class="square-button">Nyheter</div></a> 
+            <a href="GDPR.html"><div class="square-button">GDPR</div></a>
+            <a href="HMS.html"><div class="square-button">HMS</div></a>
+            <a href="Tiltak.html"><div class="square-button">Tiltak</div></a>
+            <a href="Digitale trusler.html"><div class="square-button">Trusler</div></a>
+          </div>
+        </div>
+      </div>
+      <div class="image-section">
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="Bilder/Ruten.png" style="width:100%">
+            <div class="text">Nye ruten</div>
+          </div>
+        
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="Bilder/Langgaten.png" style="width:100%">
+            <div class="text">Langgaten</div>
+          </div>
+        
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="Bilder/SandnesHavn.png" style="width:100%">
+            <div class="text">Sandnes havn</div>
+          </div>
+        
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--JavaScript-->
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
+<!--JavaScript-->
+  
+</body>
+</html>
